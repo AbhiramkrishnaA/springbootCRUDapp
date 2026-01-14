@@ -1,15 +1,20 @@
 package com.sample.springbootdemo.model;
 
-public class student_class {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="student_detials")
+public class StudentModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "std_id")
     private Integer student_Id;
     private String student_Name;
     private Integer student_Age;
     private String student_Place;
 
-    public student_class() {
-    }
 
-    public student_class(Integer student_Id, String student_Name, Integer student_Age, String student_Place) {
+    public StudentModel(Integer student_Id, String student_Name, Integer student_Age, String student_Place) {
         this.student_Id = student_Id;
         this.student_Name = student_Name;
         this.student_Age = student_Age;
@@ -57,5 +62,7 @@ public class student_class {
                 ", student_Place='" + student_Place + '\'' +
                 '}';
     }
+
 }
+
 
